@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles2.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap" rel="stylesheet">
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <figure>
+            <img src="{% static 'images/logo.png' %}" alt="logo" width="100">
+        </figure>
+        <h1>Predict'immo</h1>
+        {% if user.is_authenticated %}
+        <section id="boutons-deconnexion"><p>Vous êtes connecté(e) en tant que {{request.user}}</p><a href="{% url 'logout' %}">Se déconnecter</a></section>
+        {% else %}
+        <section id="boutons-navbar"><a href="{% url 'signup' %}">S'inscrire</a>  <a href="{% url 'login' %}">Se connecter</a></section>
+        {% endif %}
+    </nav>
+    <main>
+    {% if user.is_authenticated %}
+    <header>
+        <a href="{% url 'accueil' %}">Accueil</a>
+        <a href="{% url 'mon-compte' %}">Mon compte</a>
+        <a href="{% url 'mes-estimations' %}">Mes estimations</a>
+        <a href="{% url 'estimation' %}">Nouvelle estimation</a> 
+    </header>
+    {% endif %}
+    
+    {%block content%}{%endblock%} 
+    </main>
+    <footer>
+        <section id="logo">
+            <figure>
+                <img src="{% static 'images/logo.png' %}" alt="logo" width="170">
+            </figure>
+        </section>
+        <section>
+            <p>Contact</p>
+            <ul>
+                <li>Tel. 0606060606</li>
+                <li>Mail preictimmo@gmail.com</li>
+                <li>4 rue de la maison 59000 Lille</li>
+            </ul>
+        </section>
+        <section id="reseaux">
+            <a href=""> <img src="{% static 'images/facebook.png' %}" alt="logo" width="50"></a>
+            <a href=""><img src="{% static 'images/insta.png' %}" alt="logo" width="50"></a>
+            <a href=""><img src="{% static 'images/linkedin.png' %}" alt="logo" width="50"></a>
+        </section>
+    </footer>
+</body>
+</html>

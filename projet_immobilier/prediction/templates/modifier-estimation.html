@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{%block title%}Modifier Estimation{%endblock%}
+
+{%block content%}
+
+<h1>Modifier estimation</h1>
+
+<section class='formulaire'>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            {{form.titre.errors}}
+            <p><label for="{{form.titre.id_for_label}}">Titre</label>
+            {{form.titre}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.m2_living.errors}}
+            <p><label for="{{form.m2_living.id_for_label}}">M2 habitables : </label>
+            {{form.m2_living}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.m2_lot.errors}}
+            <p><label for="{{form.m2_lot.id_for_label}}">Superficie totale du terrain : </label>
+            {{form.m2_lot}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.m2_above.errors}}
+            <p><label for="{{form.m2_above.id_for_label}}">Superficie au dessus du niveau du sol : </label>
+            {{form.m2_above}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.m2_basement.errors}}
+            <p><label for="{{form.m2_basement.id_for_label}}">Superficie en dessous du niveau du sol : </label>
+            {{form.m2_basement}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.bedrooms.errors}}
+            <p><label for="{{form.bedrooms.id_for_label}}">Nombre de chambres : </label>
+            {{form.bedrooms}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.bathrooms.errors}}
+            <p><label for="{{form.bathrooms.id_for_label}}">Nombre de salles de bain : </label>
+            {{form.bathrooms}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.floors.errors}}
+            <p><label for="{{form.floors.id_for_label}}">Nombre d'étages : </label>
+            {{form.floors}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.zipcode.errors}}
+            <p><label for="{{form.zipcode.id_for_label}}">Code postal : </label>
+            {{form.zipcode}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.grade.errors}}
+            <p><label for="{{form.grade.id_for_label}}">Qualité globale de la construction : </label>
+            {{form.grade}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.view.errors}}
+            <p><label for="{{form.view.id_for_label}}">Qualité de la vue : </label>
+            {{form.view}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.waterfront.errors}}
+            <p><label for="{{form.waterfront.id_for_label}}">Vue sur mer : </label>
+            {{form.waterfront}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.condition.errors}}
+            <p><label for="{{form.condition.id_for_label}}">Etat général de la maison : </label>
+            {{form.condition}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.yr_built.errors}}
+            <p><label for="{{form.yr_built.id_for_label}}">Année de construction : </label>
+            {{form.yr_built}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.yr_renovated.errors}}
+            <p><label for="{{form.yr_renovated.id_for_label}}">Année de rénovation (indiquez 0 si la maison n'a pas été rénovée) : </label>
+            {{form.yr_renovated}}</p>
+        </div>
+        <div class='section-bouton'>
+            <input class='bouton' type="submit" value="Valider">
+        </div>
+    </form>
+    </section>
+
+{%endblock%}

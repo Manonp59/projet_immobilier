@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block title%}Accueil{%endblock%}
+
+{%block content%}
+
+<h1>Bienvenue</h1>
+
+
+{% if user.is_authenticated %}
+<article id=accueil>
+    <figure>
+        <img src="{% static 'images/illustration-estimation.svg' %}" alt="" width="400px">
+    </figure>
+    <section id="droite-article">
+        <h2>Content de vous revoir {{user.username}}</h2>
+        <section id="boutons-navbar"><a href="{% url 'estimation' %}">Nouvelle estimation</a></section>
+
+    </section>
+</article>
+{% else %}
+<article id=accueil>
+    <figure>
+        <img src="{% static 'images/illustration-estimation.svg' %}" alt="" width="400px">
+    </figure>
+    <section id="droite-article">
+        <h2>Vous cherchez à vendre votre maison ? </h2><h2>Faites une estimation !</h2>
+        <section id="boutons-navbar"><a href="{% url 'signup' %}">S'inscrire</a>  <a href="{% url 'login' %}">Se connecter</a></section>
+
+    </section>
+</article>
+{% endif %}
+
+{%endblock%}

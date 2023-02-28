@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{%block title%}Modifier mon compte{%endblock%}
+
+{% block content %}
+
+<h1>Modifier mon compte</h1>
+
+<section class='formulaire'>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{form.username.errors}}
+        <p><label for="{{form.username.id_for_label}}">Nom d'utilisateur :</label>
+        {{form.username}}</p>
+    </div>
+    <div class="fieldWrapper">
+        {{form.email.errors}}
+        <p><label for="{{form.email.id_for_label}}">Adresse email :</label>
+        {{form.email}}</p>
+    </div>
+    <div class="fieldWrapper">
+        {{form.password1.errors}}
+        <p><label for="{{form.password1.id_for_label}}">Mot de passe :</label>
+        {{form.password1}}</p>
+    </div>
+    <div class="fieldWrapper">
+        {{form.password2.errors}}
+        <p><label for="{{form.password2.id_for_label}}">Confirmation du mot de passe : </label>
+        {{form.password2}}</p>
+    </div>
+    <div class='section-bouton'>
+        <input class='bouton' type="submit" value="Valider">
+    </div>
+</form>
+</section>
+
+{%endblock%}

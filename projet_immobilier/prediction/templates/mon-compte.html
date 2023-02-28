@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block title%}Mon compte{%endblock%}
+
+{% block content%}
+
+<h1>Mon compte</h1>
+
+
+<section class='formulaire'>
+    <section>
+        <ul>
+            <li>Nom d'utilisateur : {{user.username}}</li>
+            <li>Adresse mail : {{user.email}}</li>
+            <li>Mot de passe : ************</li>
+        </ul>
+    </section>
+</section>  
+<section class='section-bouton'>
+<a class='bouton' href="{% url 'modifier-compte' %}">Modifier mes informations</a>
+</section>
+    
+{%endblock%}

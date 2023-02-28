@@ -1,0 +1,113 @@
+body {
+    max-width: 1400px;
+    margin:0 auto ;
+    font-family:'Comfortaa';
+    font-weight: normal;
+    height: 100%;
+    background-color: #F0E8DA
+   
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    background-color: #D3C5C5;
+}
+
+h1{
+    font-size: 50px;
+    color :#703048;
+    text-align: center;
+}
+
+#boutons-navbar, #reseaux{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#boutons-deconnexion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{
+    color:#A56C6E;
+    font-weight: 700;
+    text-align: center;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: #D3C5C5;
+}
+
+main{
+    min-height: 590px;
+}
+
+#accueil{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+h2{
+    text-align: center;
+    color:#845355;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+#droite-article{
+    display: flex;
+    flex-direction: column;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+}
+
+.formulaire{
+    display: flex;
+    justify-content: center;
+}
+
+.bouton{
+    background-color: #D3C5C5;
+    font-size: 20px;
+    color: #703048;
+    border-radius: 10px;
+    text-decoration: None;
+    padding: 10px;
+}
+
+.section-bouton{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.ligne{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 10px;
+}
+
+#estimations{
+    margin-bottom: 30px;
+}

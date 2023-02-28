@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%}Inscription{%endblock%}
+
+{% block content %}
+    <h1>Inscription</h1>
+    
+    <section class='formulaire'>
+    <form  method="post">
+        <section>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            {{form.username.errors}}
+            <p><label for="{{form.username.id_for_label}}">Nom d'utilisateur :</label>
+            {{form.username}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.email.errors}}
+            <p><label for="{{form.email.id_for_label}}">Adresse email :</label>
+            {{form.email}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.password1.errors}}
+            <p><label for="{{form.password1.id_for_label}}">Mot de passe : </label>
+            {{form.password1}}</p>
+        </div>
+        <div class="fieldWrapper">
+            {{form.password2.errors}}
+            <p><label for="{{form.password2.id_for_label}}">Confirmation mot de passe : </label>
+            {{form.password2}}</p>
+        </div>
+        <div class="section-bouton">
+            <button class="bouton" type="submit" >S’inscrire</button>
+        </div>
+    </section>
+    </form>
+</section>
+   
+{% endblock content %}
+

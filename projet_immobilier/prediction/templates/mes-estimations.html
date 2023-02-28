@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%block title%}Mes estimations{%endblock%}
+
+{% block content%}
+
+<h1>Mes estimations</h1>
+
+<section id='estimations'>
+    {% for estimation in liste_estimations|dictsortreversed:'date'%}
+    <article class='ligne'>
+        <div>🗓️ {{estimation.date|date:'d/m/Y'}} </div>
+        <div>🏡 {{estimation.titre}}</div>
+        <div>💸 {{estimation.predicted_price}}$ </div>
+        <div><a href="{% url 'estimation-details' estimation.id %}">Voir 🔎</a></div>
+    </article>
+    {% endfor%}
+    
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{estimation.titre}}</h1>
+
+<section>
+    <section class="formulaire">
+        <ul>
+            <li>Date : {{estimation.date|date:'d/m/Y'}}</li>
+            <li>M2 habitables : {{estimation.m2_living}}</li>
+            <li>Superficie totale du terrain : {{estimation.m2_lot}}</li>
+            <li>Superficie au dessus du niveau du sol : {{estimation.m2_above}}</li>
+            <li>Superficie en dessous du niveau du sol : {{estimation.m2_basement}}</li>
+            <li>Nombre de chambres : {{estimation.bedrooms}}</li>
+            <li>Nombre de salles de bain : {{estimation.bathrooms}}</li>
+            <li>Nombre d'étages : {{estimation.floors}}</li>
+            <li>Code postal : {{estimation.zipcode}}</li>
+            <li>Qualité globale de la construction et du design (1 à 13) : {{estimation.grade}}</li>
+            <li>Qualité de la vue (0 à 4) : {{estimation.view}}</li>
+            <li>Vue sur mer : {{estimation.waterfront}}</li>
+            <li>Etat général de la maison (1 à 5) : {{estimation.condition}}</li>
+            <li>Année de construction : {{estimation.yr_built}}</li>
+            <li>Année de rénovation : {{estimation.yr_renovated}}</li>
+        </ul>
+    </section>
+    <h2>Estimation : {{estimation.predicted_price}}$</h2>
+</section>  
+<section class='section-bouton'>
+<a class='bouton' href="{% url 'modifier-estimation' estimation.id %}">Modifier cette estimation</a>
+</section>
+
+{% endblock %}
