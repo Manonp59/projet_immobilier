@@ -89,7 +89,7 @@ class Estimation(models.Model):
     bedrooms = models.FloatField()
     bathrooms = models.FloatField()
     floors = models.FloatField()
-    zipcode = models.FloatField(choices=zip_choices)
+    zipcode = models.IntegerField(choices=zip_choices)
     grade = models.IntegerField()
     view = models.IntegerField()
     waterfront = models.IntegerField(choices=waterfront_choices)
